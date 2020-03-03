@@ -54,7 +54,6 @@ def login():
             # passed to the login_user() method below.
             # get user id, load into session
             login_user(user)
-            load_user(user.id)
             # remember to flash a message to the user
             flash('Logged in successfully.', 'success')
             next_page = request.args.get('next')
