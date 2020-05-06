@@ -1,0 +1,28 @@
+{% extends "base.html" %} 
+
+{%block main%}
+
+<h1 class="page-title">New Post</h1>
+
+	 <form action="{{ url_for('posts', user_id=id) }}" method="post" enctype="multipart/form-data" class="outline"> 
+		{{ form.csrf_token }}
+
+		<div class="fom-group">
+ 			{{ form.photo.label  (class="bold")}} 
+ 			<br>
+ 			<label class="upload-btn"> {{form.photo (id='photo')}} Browse...</label>
+  			<br>
+ 		</div> 
+
+ 		<div class="fom-group">
+ 			{{ form.caption.label  (class="bold")}} 
+ 			<br>
+ 			{{ form.caption (class="textbox")}}
+ 		</div>
+
+ 		<div class="fom-group">
+ 			
+ 				<button type="submit" class="btn"> Submit</button>
+ 			
+ 		</div>	
+{% endblock %}

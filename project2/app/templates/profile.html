@@ -1,0 +1,66 @@
+{% extends "base.html" %} 
+
+{%block main%}
+	<h1 class="page-title">Add Profile</h1>
+
+	 <form action="{{ url_for('profile') }}" method="post" enctype="multipart/form-data" class="outline"> 
+		{{ form.csrf_token }}
+
+		<div class="fom-group">
+			{{ form.username.label  (class="bold")}}
+			<br> 
+ 			{{ form.username (class="textbox")}}
+ 		</div>
+
+		<div class="fom-group">
+			{{ form.password.label  (class="bold")}}
+			<br> 
+ 			{{ form.password (class="textbox")}}
+ 		</div>
+
+
+		<div class="fom-group">
+			{{ form.firstname.label  (class="bold")}}
+			<br> 
+ 			{{ form.firstname (class="textbox")}}
+ 		</div>
+
+ 		<div class="fom-group">
+			{{ form.lastname.label  (class="bold")}} 
+			<br>
+ 			{{ form.lastname (class="textbox")}}
+ 		</div>
+
+		
+ 		<div class="fom-group">
+ 			{{ form.email.label (class="bold")}} 
+ 			<br>
+ 			{{ form.email (class="textbox" , placeholder="jdoe@example.com") }}
+ 		</div>
+
+ 		<div class="fom-group">
+ 			{{ form.location.label  (class="bold") }} 
+ 			<br>
+ 			{{ form.location (class="textbox" , placeholder="eg. Kingston, Jamaica")}}
+ 		</div>
+
+ 		<div class="fom-group">
+ 			{{ form.biography.label  (class="bold")}} 
+ 			<br>
+ 			{{ form.biography (class="textbox")}}
+ 		</div>
+
+ 		<div class="fom-group">
+ 			{{ form.profile_photo.label  (class="bold")}} 
+ 			<br>
+ 			<label class="upload-btn"> {{form.profile_photo (id='photo')}} Browse...</label>
+  			<br>
+ 		</div> 
+
+ 		<div class="fom-group">
+ 			
+ 				<button type="submit" class="btn"> Add Profile</button>
+ 			
+ 		</div>	
+ 	</form> 
+ 	{% endblock %}

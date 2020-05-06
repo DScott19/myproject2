@@ -1,0 +1,183 @@
+body {
+    padding-top: 5rem;
+    background-color: #cde4f2;
+}
+
+
+.page-title{
+	font-weight: bold;
+	width:50%;
+	margin:0px auto; 
+	padding-bottom: 10px;
+}
+
+
+
+.btn{
+	background-color:#32CD32; 
+	width:150px;
+	border-radius:10px;
+	color: white;
+	font-weight: bold;
+}
+
+
+.textbox{
+	border-radius:5px;
+	margin-bottom: 25px;
+	width:75%;
+	padding: 5px;
+}
+
+
+.bold{
+ 	font-family: "Arial", Times, serif;
+ 	font-weight: bold;
+ }
+
+
+.fom-group{
+	padding-left: 15px;
+}
+
+
+.outline{
+	display: flex;
+	flex-direction: column;
+	width:50%;
+	background-color: white;
+	padding:15px 30px;
+	margin:0px auto;
+	border-radius: 5px; 
+	border-top: 5px solid #0080b3;
+}
+
+
+.profile_img{
+
+ 	float: left;
+ 	width:170px;
+ 	height:140px;
+ 	margin-right:15px;
+}
+
+
+.buttons{
+	display: flex;
+	flex-direction: row;
+	padding-top: 20px;
+}
+
+
+#messgae{
+	width:35%;
+	margin-left: 10%;
+	border-radius:10px;
+	background-color:#32CD32;
+	color:white;
+	font-weight:bold;
+	padding: 5px;
+}
+
+
+#follow{
+	margin-left:15%;
+	width:35%;
+	border-radius:10px;
+	background-color: #0080b3;
+	color:white;
+	font-weight:bold;
+	padding:5px;
+}
+
+
+p{
+	color: grey;
+}
+
+
+.info{
+	color:grey;
+}
+
+.info h6{
+	font-weight: bold;
+	padding: 10px 0px;
+}
+
+
+img{
+	width:16px;
+	height:18px;
+	margin-right: 15px;
+}
+
+
+.top{
+	display: flex;
+	flex-direction: row;
+}
+
+
+.user_info{
+	display: flex;
+	flex-direction: column;
+}
+
+
+.user_info h4{
+	font-weight: bold;
+}
+
+
+.grid{
+	display: grid;
+ 	grid-template-columns: 25% 35% 20%;
+	grid-gap:10px;
+}
+
+
+.profile-list{
+	width: 60%;
+	display: grid;
+	grid-template-columns: auto;
+	background-color: white;
+	margin:0px auto;
+	border-radius: 5px; 
+	border-top: 5px solid #0080b3;
+	padding:10px;
+}
+
+
+.grid-item-btn{
+	align-self: center;
+}
+
+
+.grid-item-info{
+	padding-left: 30px;
+	align-self: center;
+}
+
+
+#photo{
+	display: none;
+	width:100px;
+}
+
+
+.upload-btn{
+	border-style:outset;
+	border-color: #e7e7e7;
+	border-radius: 10px;
+	width:150px;
+	text-align: center;
+	font-weight: bold;
+	margin-bottom:25px;
+	padding: 5px;
+}
+
+
+#gender option[value=""]{
+	display: none;
+}
