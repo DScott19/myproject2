@@ -1,14 +1,14 @@
 from . import db
 from werkzeug.security import generate_password_hash
+import datetime
 
 class Posts(db.Model):
     
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     user_id = db.Column(db.Integer)
-    photo = db.Column(db.String(80))
-    caption = db.Column(db.String(80))
-    created_on= db.Column(db.String(255))
-##    likes = db.relationship('Likes', backref='posts', lazy=True)
+    photo = db.Column(db.String(80),unique=True)
+    caption = db.Column(db.String(255))
+    created_on= db.Column(db.DateTime(), default=datetime.datetime.utcnow)
 
     def __init__(self,user_id,photo,caption,created_on):
         self.user_id=user_id
@@ -31,8 +31,7 @@ class Users(db.Model):
     location=db.Column(db.String(120))
     biography=db.Column(db.String(255))
     profile_photo=db.Column(db.String(255))
-    joined_on=db.Column(db.String(255))
-##    posts = db.relationship('Posts', backref='users', lazy=True)
+    joined_on= db.Column(db.DateTime(), default=datetime.datetime.utcnow)
 
     def __init__(self,firstname,lastname,username,password,email,location,biography,profile_photo,joined_on):
         self.firstname=firstname
@@ -70,6 +69,10 @@ class Likes(db.Model):
     post_id= db.Column(db.Integer)
 
 
+    def __init__(self,user_id,post_id):
+        self.user_id=user_id
+        self.post_id=post_id
+        
     def __repr__(self):
         return '<Likes ID %r>' % (self.id)
 
@@ -79,10 +82,12 @@ class Likes(db.Model):
 class Follows(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     user_id = db.Column(db.Integer)
-    follower_id = db.Column(db.Integer, unique=True, autoincrement=True)  
+    follower_id = db.Column(db.Integer)  
 
-   
+    def __init__(self,user_id,follower_id):
+        self.user_id=user_id
+        self.follower_id=follower_id
   
     def __repr__(self):
-        return '<Follower ID %r>' % (self.follower_id)
+        return '<Follower ID %r>' % (self.id)
 
