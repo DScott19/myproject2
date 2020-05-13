@@ -17,7 +17,7 @@ class Posts(db.Model):
         self.created_on=created_on
 
     def __repr__(self):
-        return '<Photo %r>' % (self.photo)
+        return '<Photo %r>' %(self.photo)
 
 
 
